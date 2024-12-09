@@ -14,6 +14,7 @@ class KibExport implements FromQuery, WithHeadings, WithMapping
     {
         return DB::table('kibs')
             ->select(
+                'kibs.id',
                 'kibs.name',
                 'kibs.merk',
                 'kibs.tipe',
@@ -29,6 +30,7 @@ class KibExport implements FromQuery, WithHeadings, WithMapping
     public function map($row): array
     {
         return [
+            $row->id,
             $row->name,
             $row->merk,
             $row->tipe,
@@ -43,6 +45,7 @@ class KibExport implements FromQuery, WithHeadings, WithMapping
     public function headings(): array
     {
         return [
+            'No',
             'Nama Barang',
             'Merk',
             'Tipe',
