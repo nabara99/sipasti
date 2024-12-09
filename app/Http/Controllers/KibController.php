@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\KibExport;
 use App\Models\Kib;
 use App\Http\Requests\UpdateKibRequest;
 use App\Imports\KibsImport;
@@ -62,16 +63,16 @@ class KibController extends Controller
 
             $kib->save();
         }
-        
+
         return redirect()->route('kib.index')->with('success', 'KIB baru berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Kib $kib)
+    public function show()
     {
-        //
+        return Excel::download(new KibExport(), 'data_kib.xlsx');
     }
 
     /**
@@ -112,7 +113,7 @@ class KibController extends Controller
             'year' => $request->year,
         ]);
 
-        return redirect()->route('kib.index')->with('success', 'KIB berhasil diupdate');
+        return redirect()->route('kib.index')->with('success', 'Kib berhasil diupdate');
     }
 
     /**
@@ -142,7 +143,7 @@ class KibController extends Controller
         . "Kode: {$kib->code}\n"
         . "Harga: Rp" . number_format($kib->price, 0, ',', '.') . "\n"
         . "Kondisi: {$kib->condition}\n"
-        . "Lokasi: {$kib->place}\n"
+        . "Lokasi/Pemegang: {$kib->place}\n"
         . "Tahun: {$kib->year}";
 
         $qrCode = new QrCode($qrData);
@@ -157,4 +158,8 @@ class KibController extends Controller
             ->header('Content-Disposition', "attachment; filename=\"{$fileName}\"");
     }
 
+    public function export()
+    {
+
+    }
 }
