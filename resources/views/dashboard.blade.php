@@ -73,7 +73,7 @@
                                 <h4>Rusak Berat</h4>
                             </div>
                             <div class="card-body">
-                                Rp. {{ $rusak_berat }}
+                                {{ $rusak_berat }}
                             </div>
                         </div>
                     </div>
