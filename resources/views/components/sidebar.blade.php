@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="">Sipasti</a>
+            <a href="{{ route('home') }}">Sipasti</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Belanja Modal</li>
