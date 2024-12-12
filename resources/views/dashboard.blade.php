@@ -76,6 +76,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <a href="https://drive.google.com/file/d/1pCXzg8P5ww9AgGEJP-F-J4qQdCIv7Amn/view?usp=sharing" class="btn btn-success" target="blank">Buku manual/ tutorial penggunaan</a>
+                </div>
             </div>
         </section>
     </div>
